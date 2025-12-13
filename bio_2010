@@ -1,0 +1,29 @@
+# Q1
+
+num = input("anagram number: ")
+nums = []
+product = 0
+product_nums = []
+ans = []
+def check_is_equal(list1, list2):
+    return sorted(list1) == sorted(list2)
+
+for digit in num:
+    nums.append(digit)
+
+for i in range(2, 9):
+    product = i * int(num)
+    for digit in str(product):
+        product_nums.append(digit)
+    if check_is_equal(nums, product_nums):
+        ans.append(i)
+    product_nums = []
+
+if len(ans) > 0:
+    for n in ans:
+        print(n, end=" ")
+    print()
+else:
+    print("NO")
+
+# GRADER: 25/25
